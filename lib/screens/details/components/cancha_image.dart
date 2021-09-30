@@ -1,41 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:home_offsideapp/constants.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class CanchaPoster extends StatelessWidget {
-  const CanchaPoster({
+   const CanchaPoster({
     Key? key,
     required this.size,
-    this.image,
+    //this.image,
+    this.imgList,
   }) : super(key: key);
 
   final Size size;
-  final String? image;
+  //final String? image,image2,image3;
+  final List<String>? imgList;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: kDefaultPadding),
-      height: size.width * 0.8,
+      height: size.width * 0.7,
       //color: Colors.black,
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        children: <Widget>[
-          Container(
-            height: size.width * 0.7,
-            width: size.width * 0.7,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
-          ),
-          Image.asset(
-            image!,
-            height: size.width * 0.75,
-            width: size.width * 0.75,
-            fit: BoxFit.cover,
-
-          ),
-        ],
+      child: CarouselSlider(
+        options: CarouselOptions(
+          autoPlay: true,
+        ),
+        items: imgList!
+            .map((item) => Container(
+                  child: Center(
+                      child:
+                          Image.network(item, fit: BoxFit.cover, width: size.width * 0.7, height:size.width * 0.7,)),
+                ))
+            .toList(),
       ),
     );
   }

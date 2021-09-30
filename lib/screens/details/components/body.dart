@@ -41,7 +41,8 @@ class Body extends StatelessWidget {
                       tag: '${cancha!.id}',
                       child: CanchaPoster(
                         size: size, 
-                        image: cancha!.image,
+                        //image: cancha!.image,
+                        imgList: cancha!.imgList,
                       ),
                     ),
                   ),
