@@ -36,7 +36,7 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 ListView.builder(
-                  //aca estamos usando la lista de canchas cancha.dart
+                  //aca estamos usando la lista de canchas - cancha.dart
                   itemCount: canchas.length,
                   itemBuilder: (context, index) => CanchaCard(
                     itemIndex: index,
