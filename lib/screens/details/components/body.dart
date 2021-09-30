@@ -46,7 +46,7 @@ class Body extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ListOfColors(),
+                  //ListOfColors(),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
                     child: Text(
@@ -60,6 +60,15 @@ class Body extends StatelessWidget {
                       fontSize: 18, 
                       fontWeight: FontWeight.w600,
                       color: kSecondaryColor,
+                    ),
+                  ),
+                  Padding(
+                    //padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
+                    padding: EdgeInsets.only(top: kDefaultPadding / 2),
+                    child: Text(
+                      "Horario: ${cancha!.horario}",
+                      //cancha!.horario,
+                      style: TextStyle(color: kTextLightColor),
                     ),
                   ),
                   Padding(
