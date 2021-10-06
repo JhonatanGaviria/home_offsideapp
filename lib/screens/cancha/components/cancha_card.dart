@@ -56,9 +56,12 @@ class CanchaCard extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
                   height: 160,
                   width: 200,
-                  child: Image.asset(
-                    cancha!.image,
-                    fit: BoxFit.cover,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(90.0),
+                    child: Image.network(
+                      cancha!.imgList[0],
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
